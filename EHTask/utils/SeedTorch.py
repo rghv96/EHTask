@@ -2,13 +2,13 @@
 
 #################### Libs ####################
 import os
-import random
 import numpy as np
 import torch
+import secrets
 
 def SeedTorch(seed=0):
 
-    random.seed(seed)
+    secrets.SystemRandom().seed(seed)
     os.environ['PYTHONHASHSEED'] = str(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
